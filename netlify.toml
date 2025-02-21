@@ -1,8 +1,8 @@
 #[[redirects]]
 #from = "/*"
-#to = "./build/index.html"
+#to = "/build/index.html"
 #status = 200
 
 [build]
   publish = "build"  # Set this to "build" if your index.html is inside /build
-  command = ""  
+  command = "" 
