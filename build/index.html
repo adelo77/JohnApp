@@ -9,9 +9,13 @@
         <h1>Welcome to John App - your psychological companion</h1>
     </header>
 
-    <section class="prompt-section">
-        <p>Hello! I'm here to assist you. How can I help you today?</p>
-        <p>Ask me anything, or simply say "Hi Gemini" to begin.</p>
+    <section class="chat-container">
+        <div id="chat-history" class="chat-history">
+            </div>
+        <div class="input-area">
+            <textarea id="user-input" placeholder="Type your message to Gemini here..." class="ai-textbox"></textarea>
+            <button id="send-button" class="send-button">Send</button>
+        </div>
     </section>
 
     <script src="script.js"></script>

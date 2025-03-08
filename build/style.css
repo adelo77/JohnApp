@@ -5,6 +5,10 @@ body {
     padding: 0;
     background-color: #f4f4f4; /* Light grey background */
     color: #333; /* Dark grey text */
+    display: flex; /* Enable flexbox for body */
+    flex-direction: column; /* Stack header and chat container vertically */
+    align-items: center; /* Center items horizontally in the body */
+    min-height: 100vh; /* Ensure body takes at least the full viewport height */
 }
 
 header {
@@ -12,6 +16,7 @@ header {
     color: #fff; /* White header text */
     padding: 20px 0;
     margin-bottom: 20px;
+    width: 100%; /* Header full width */
 }
 
 header h1 {
@@ -19,17 +24,73 @@ header h1 {
     font-size: 2em;
 }
 
-.prompt-section {
+.chat-container {
+    display: flex; /* Enable flexbox for chat container */
+    flex-direction: column; /* Stack chat history and input area vertically */
     padding: 20px;
     background-color: #fff; /* White section background */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* হালকা ছায়া */
     width: 80%;
     max-width: 600px;
-    margin: 20px auto;
+    margin-bottom: 20px; /* Add margin below the chat container */
+    flex-grow: 1; /* Allow chat container to grow and take available space */
+    display: flex;
+    flex-direction: column; /* Stack chat history and input area vertically */
 }
 
-.prompt-section p {
-    line-height: 1.6;
-    margin-bottom: 15px;
+.chat-history {
+    flex-grow: 1; /* Allow chat history to take up most of the space */
+    overflow-y: auto; /* Enable vertical scrolling if chat history is long */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee; /* Separator line */
+}
+
+.input-area {
+    display: flex; /* Flexbox for input area to align textarea and button */
+    justify-content: space-between; /* Space out textarea and button */
+    align-items: center; /* Vertically align items in input area */
+    padding-top: 10px;
+}
+
+
+.ai-textbox {
+    flex-grow: 1; /* Textbox takes up most of the width */
+    height: 80px; /* Adjusted height */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+    margin-right: 10px; /* Space between textbox and button */
+}
+
+.send-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.user-message, .gemini-response {
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    clear: both; /* Prevent floating issues */
+}
+
+.user-message {
+    background-color: #e2f0cb; /* Light green for user messages */
+    text-align: right;
+    float: right; /* Align user messages to the right */
+}
+
+.gemini-response {
+    background-color: #f0f0f0; /* Light grey for Gemini responses */
+    text-align: left;
+    float: left; /* Align Gemini responses to the left */
 }
